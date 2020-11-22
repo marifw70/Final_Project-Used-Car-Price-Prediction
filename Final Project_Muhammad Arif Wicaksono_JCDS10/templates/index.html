@@ -1,0 +1,342 @@
+{% extends "material/base.html" %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a href = "{{url_for('index')}}" class = "nav-item nav-link">Reset</a>
+        <a href = "{{url_for('dataset')}}" class = "nav-item nav-link">View Dataset</a>
+        <a href = "{{url_for('grafik')}}" class = "nav-item nav-link">View Grafik</a>
+        
+      </div>
+    </div>
+</nav>
+<!-- <div class = "showcase container blue lighten-3">
+    <div class = "row">
+        <div class = "col 12 m10 offset-ml center">
+            <h2>Used Car Price Predictor</h2>
+            <p></p>
+            <a href = "{{url_for('index')}}" class = "nav-item nav-link">Reset</a>
+            <a href = "{{url_for('dataset')}}" class = "nav-item nav-link">View Dataset</a>
+            <a href = "{{url_for('grafik')}}" class = "nav-item nav-link">View Grafik</a>
+        </div>
+
+        
+    </div>
+</div> -->
+<section class = "section section-signup">
+    <div class = "container">
+        <div class = "row">
+
+
+            <div class = "col s12 m4">
+                <div class="card-panel grey lighten-4 grey-text text-darken-4 z-depth-0">
+                    <form action="{{ url_for('analyze')}}" method="POST">
+                        <div class = "input-field">
+                            <select id="year" name="year">
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+
+                            </select>
+                            <label for = "year">Select Year Car Release</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="manufacturer" name="manufacturer">
+                                <option value="" disabled selected>Select Manufacturer</option>
+                                <option value="hyundai">hyundai</option>
+                                <option value="toyota">toyota</option>
+                                <option value="chevrolet">chevrolet</option>
+                                <option value="other">other</option>
+                                <option value="jeep">jeep</option>
+                                <option value="ford">ford</option>
+                                <option value="subaru">subaru</option>
+                                <option value="nissan">nissan</option>
+                                <option value="land rover">land rover</option>
+                                <option value="lexus">lexus</option>
+                                <option value="dodge">dodge</option>
+                                <option value="chrysler">chrysler</option>
+                                <option value="mini">mini</option>
+                                <option value="mercedes-benz">mercedes benz</option>
+                                <option value="bmw">bmw</option>
+                                <option value="ram">ram</option>
+                                <option value="kia">kia</option>
+                                <option value="audi">audi</option>
+                                <option value="acura">acura</option>
+                                <option value="honda">honda</option>
+                                <option value="gmc">gmc</option>
+                                <option value="volkswagen">volkswagen</option>
+                                <option value="buick">buick</option>
+                                <option value="volvo">volvo</option>
+                                <option value="pontiac">pontiac</option>
+                                <option value="lincoln">lincoln</option>
+                                <option value="cadillac">cadillac</option>
+                                <option value="mitshubishi">mitshubishi</option>
+                                <option value="mazda">mazda</option>
+                                <option value="fiat">fiat</option>
+                                <option value="infinity">infinity</option>
+                                <option value="jaguar">jaguar</option>
+                                <option value="mercury">mercury</option>
+                                <option value="jaguar">jaguar</option>
+                                <option value="tesla">tesla</option>
+                                <option value="saturn">saturn</option>
+                                <option value="alfa-romeo">alfa-romeo</option>
+                                <option value="aston-martin">aston-martin</option>
+                                <option value="porche">porche</option>
+                                
+                            </select>
+                            <label for = "location">Select Manufacturer Car</label>
+                        </div>
+
+                        <div class="input-field">
+                            <p class="range-field">
+                                 <input type="range" id="odometer" name="odometer" min="0" max="120000" value="0"
+                            step="1" >
+                             <label for="odometer">Odometer</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="condition" name="condition">
+                                <option value="" disabled selected>Select Condition Car</option>
+                                <option value="new">New</option>
+                                <option value="excellent">Excellent</option>
+                                <option value = "good">Good</option>
+                                <option value = "unknown">Unknown</option>
+                                <option value = "like new">Like New</option>
+                                <option value = "fair">Fair</option>
+                                <option value = "salvage">Salvage</option>
+                            </select>
+                            <label for = "market_segment">Select Condition Car</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="cylinders" name="cylinders">
+                                <option value="" disabled selected>Select cylinders</option>
+                                <option value="4 cylinders">4 cylinders</option>
+                                <option value="8 cylinders">8 cylinders</option>
+                                <option value="6 cylinders">6 cylinders</option>
+                                <option value="other">other </option>
+                                <option value="10 cylinders">10 cylinders</option>
+                                <option value="5 cylinders">5 cylinders</option>
+                                <option value="3 cylinders">3 cylinders</option>
+                                <option value="12 cylinders">12 cylinders</option>
+                            </select>
+                            <label for = "cylinders">Select cylinders</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="fuel" name="fuel">
+                                <option value="" disabled selected>Select Gas</option>
+                                <option value="gas">Gas</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="other">Other</option>
+                                <option value="electric">Electric</option>
+                            </select>
+                            <label for = "fuel">Select Gas </label>
+                        </div>
+                        
+
+                        <div class = "input-field">
+                            <select id="title_status" name="title_status">
+                                <option value="" disabled selected>Status Car</option>
+                                <option value="clean">clean</option>
+                                <option value="lien">lien</option>
+                                <option value="rebuilt">rebuilt</option>
+                                <option value="salvage">salvage</option>
+                                <option value="unknown">unknown</option>
+                                
+                            </select>
+                            <label for = "title_status">Status Car</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="transmission" name="transmission">
+                                <option value="" disabled selected>Select Transmission</option>
+                                <option value="automatic">Automatic</option>
+                                <option value="manual">Manual</option>
+                            </select>
+                            <label for = "transmission">Select Transmission</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="drive" name="drive">
+                                <option value="" disabled selected>Select Drive</option>
+                                <option value="4wd">4wd</option>
+                                <option value="fwd">fwd</option>
+                                <option value="rwd">rwd</option>
+                                
+                            </select>
+                            <label for = "drive">Select drive</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="size" name="size">
+                                <option value="" disabled selected>Select Size Car</option>
+                                <option value="full-size">Full Size</option>
+                                <option value="compact">Compact</option>
+                                <option value="mid-size">Mid Size</option>
+                                <option value="sub-compact">Sub Compact</option>
+                            </select>
+                            <label for = "size">Select Size Car </label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="type" name="type">
+                                <option value="" disabled selected>Select Car Type</option>
+                                <option value="SUV">SUV</option>
+                                <option value="truck">Truck</option>
+                                <option value="wagon">Wagon</option>
+                                <option value="hatchback">Hatchback</option>
+                                <option value="pickup">Pickup</option>
+                                <option value="van">Van</option>
+                                <option value="coupe">Coupe</option>
+                                <option value="minivan">Minivan</option>
+                                <option value="offroad">Off Road</option>
+                                <option value="convertible">Convertible</option>
+
+                            </select>
+                            <label for = "type">Select Car Type</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="state" name="state">
+                                <option value="" disabled selected>Select Car State</option>
+                                <option value="mn">mn</option>
+                                <option value="ct">ct</option>
+                                <option value="nm">nm</option>
+                                <option value="tx">tx</option>
+                                <option value="dc">dc</option>
+                                <option value="nc">nc</option>
+                                <option value="ny">ny</option>
+                                <option value="va">va</option>
+                                <option value="wa">wa</option>
+                                <option value="fl">fl</option>
+                                <option value="ga">ga</option>
+                                <option value="ca">ca</option>
+                                <option value="de">de</option>
+                                <option value="tn">tn</option>
+                                <option value="wi">wi</option>
+                                <option value="ar">ar</option>
+                                <option value="oh">oh</option>
+                                <option value="ok">ok</option>
+                                <option value="al">al</option>
+                                <option value="ia">ia</option>
+                                <option value="or">or</option>
+                                <option value="nv">nv</option>
+                                <option value="mo">mo</option>
+                                <option value="pa">pa</option>
+                                <option value="ms">ms</option>
+                                <option value="ut">ut</option>
+                                <option value="ky">ky</option>
+                                <option value="la">la</option>
+                                <option value="ks">ks</option>
+                                <option value="vt">vt</option>
+                                <option value="ak">ak</option>
+                                <option value="mt">mt</option>
+                                <option value="ma">ma</option>
+                                <option value="az">az</option>
+                                <option value="me">me</option>
+                                <option value="nh">nh</option>
+                                <option value="md">md</option>
+                                <option value="ne">ne</option>
+                                <option value="nd">nd</option>
+                                <option value="co">co</option>
+                                <option value="id">id</option>
+                                <option value="wv">wv</option>
+                                <option value="nj">nj</option>
+                                <option value="hi">hi</option>
+                                <option value="mi">mi</option>
+                                <option value="ri">ri</option>
+                                <option value="sc">sc</option>
+                                <option value="sd">sd</option>
+                                <option value="wy">wy</option>
+                                <option value="il">il</option>
+                                <option value="in">in</option>
+                            </select>
+                            <label for = "state">Select Car State</label>
+                        </div>
+
+                        <div class = "input-field">
+                            <select id="class_car" name="class_car">
+                                <option value="" disabled selected>Select Class Car</option>
+                                <option value="0">Basic car</option>
+                                <option value="1">luxury car</option>
+                            </select>
+                            <label for = "class_car">Select Class Car</label>
+                        </div>
+
+                        <input type="submit" value="Predict" >
+                        <input type="reset" value="Clear" >    
+                    </form>
+                </div>
+            </div>
+            <div class = "col s12 m4 offers">
+                <div class = "card-panel blue lighten-4 grey-text text-darken-4 z-depth-0">
+            <p>Year : {{Year}}</p>
+            <p>Manufacturer : {{Manufacturer}}</p>
+            <p>Condition : {{Condition}}</p>
+            <p>Cylinders: {{Cylinders}}</p>
+            <p>Fuel: {{Fuel}}</p>
+            <p>Odometer: {{Odometer}}</p>
+            <p>Title Status: {{title_status}}</p>
+            <p>Transmission: {{Transmission}} </p>
+            <p>Drive: {{Drive}}</p>
+            <p>Size: {{Size}}</p>
+            <p>Type: {{Type}}</p>
+            <p>State: {{State}}</p>
+            <p>Class car: {{class_car}}</p>
+                </div>
+            </div>
+
+            <div class = "col s12 m4 offers">
+                <h5>Used Car Price Prediction</h5>
+                    <div class = "collection" role = "alert">
+                        <p class = "collection-item active blue"> Price this Car is $ {{predict_fix}}  </p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+{{super()}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<!-- <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('select');
+   var instances = M.FormSelect.init(elems, options);
+ });
+</script> -->
+
+<script>
+   // Or with jQuery
+
+ $(document).ready(function(){
+   $('select').formSelect();
+ });
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "material/base.html" %}
+{% block content %}
+<center>
+  <h2>Used Car Price</h2>
+  <h5>[Dataset After Handling Missing Value]</h5>
+</center>
+<br>
+<center></center>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar" style="max-width: 1250px;margin-left:auto;margin-right:auto;">
+    <table  class="table table-bordered table-striped mb-0">
+ 
+        {{df_view.to_html(classes = "table striped", na_rep = "-")| safe}}
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+{% endblock %}
+
+    <!-- <br>
+    <br>
+    <br>
+    <center>
+      <h2>Feature Explanation</h2>
+    </center>
+    <br>
+    
+  
+  
+    <div class="table-wrapper-scroll-y my-custom-scrollbar" style="max-width: 1250px; margin-left:auto;margin-right:auto;">
+        <table class="table table-bordered table-striped mb-0">
+            <thead><tr class="bg-secondary">
+            <th scope="col" class="text-white">Feature</th>
+            <th scope="col" class="text-white">Explanation</th>
+            </tr></thead>
+            <tbody><tr>
+            <td><b>Price</b></td>
+            <td>Entry price</td>
+            </tr>
+            <tr>
+            <td><b>Year</b></td>
+            <td>Entry year</td>
+            </tr>
+            <tr>
+            <td><b>Manufacturer</b></td>
+            <td>Manufacturer of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Model</b></td>
+            <td>Model of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Condition</b></td>
+            <td>Condition of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Cylinders</b></td>
+            <td>Numbers of cylinders</td>
+            </tr>
+            <tr>
+            <td><b>Fuel</b></td>
+            <td>Fuel type</td>
+            </tr>
+            <tr>
+            <td><b>Odometer</b></td>
+            <td>Miles traveled by vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Title Status</b></td>
+            <td>Title status of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Transmission</b></td>
+            <td>Transmission of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>drive</b></td>
+            <td>type of drive</td>
+            </tr>
+            <tr>
+            <td><b>Size</b></td>
+            <td>Size of Vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Type</b></td>
+            <td>Generic type of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>Paint Color</b></td>
+            <td>Color of vehicle</td>
+            </tr>
+            <tr>
+            <td><b>State</b></td>
+            <td>State of listing</td>
+            </tr>
+            <tr>
+            <td><b>Class Car</b></td>
+            <td>Type of Car</td>
+            </tr>
+
+        </tbody></table>
+            
+    </div>
+    </center>
+    -->
