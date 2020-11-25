@@ -75,11 +75,11 @@ sin penggeraknya kondisi dan status mobil tersebut
 - Berdasarkan informasi dari web https :://www edmunds com/car buying/ 10
 steps to buying a used car html ada beberapa tips untuk membeli mobil bekas
 yaitu:
-• tentukan dulu tipe mobil apa yang ingin dibeli
-• tentukan beberapa merk dan coba bandingkan plus minus dari merk yang sudah ditentukan
-• lalu cek harga pasar berdasarkan area tempat yang ingin dibeli
-• setelah itu cek historikal dari kendaraan tersebut dan coba untuk melakukan test drive mobil tersebut
-• setelah yakin coba untuk cek harga pasar dengan menggunakan machine learning yang telah dibuat
+  a.  tentukan dulu tipe mobil apa yang ingin dibeli
+  b.  tentukan beberapa merk dan coba bandingkan plus minus dari merk yang sudah ditentukan
+  c.  lalu cek harga pasar berdasarkan area tempat yang ingin dibeli
+  d.  setelah itu cek historikal dari kendaraan tersebut dan coba untuk melakukan test drive mobil tersebut
+  e.  setelah yakin coba untuk cek harga pasar dengan menggunakan machine learning yang telah dibuat
 
 
 Link For Access Model Machine Learning Random Forest
