@@ -72,7 +72,9 @@ dalah truck
 obil itu sendiri seperti misal dari bahan bakarnya,cylinders transmisinya ukuran me
 sin penggeraknya kondisi dan status mobil tersebut
 
-- Berdasarkan informasi dari web https :://www edmunds com/car buying/ 10
+### Suggestion
+
+Berdasarkan informasi dari web https :://www edmunds com/car buying/ 10
 steps to buying a used car html ada beberapa tips untuk membeli mobil bekas
 yaitu:
   1.  tentukan dulu tipe mobil apa yang ingin dibeli
